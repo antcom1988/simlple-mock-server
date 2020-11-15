@@ -1,0 +1,36 @@
+akashiro
+
+install 
+	mongo
+	redis
+	sonarcube
+
+mock server
+	- upload path + return
+	- generator + mock server
+	- multi port support
+	- yaml configuration
+	- parameterize variable
+		- parameter in url			=> using [var], sample [id]
+		- parameter in response			=> using [=var], sample [=id]
+		- harcode parameter, ex timestamp 	=> [=timestamp]
+	
+yaml file
+============
+port:
+	- 8080
+	- 8181
+
+url:
+	-
+		path: /books
+		method: GET
+		response: jsonfile
+	-
+		path: /books
+		method: POST
+		response: jsonfile
+	-
+		path: /books/[id]
+		method: GET
+		response: jsonfile
